@@ -46,7 +46,7 @@ venv-create:
 		exit 1; \
 	fi;
 	@if [[ ! -f $(VENV_ACTIVATE_FILE) ]]; then \
-		eval "$$(pyenv init -)" && eval "$$(pyenv init --path)" && $(PY_BIN) -mvenv $(VENV_NAME); \
+		eval "$$(pyenv init --path)" && $(PY_BIN) -mvenv $(VENV_NAME); \
 		printf "Created python3 venv under $(PWD)/$(VENV_NAME).\n"; \
 	fi;
 
